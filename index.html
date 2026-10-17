@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Melodyne Web</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+  <h1>Melodyne Web</h1>
+  <label class="btn">Abrir audio<input id="file" type="file" accept="audio/*" hidden></label>
+  <button id="rec" class="rec">Grabar voz</button>
+  <button id="demo">Ejemplo</button>
+  <button id="play" class="primary" disabled>Reproducir</button>
+  <button id="undo" aria-label="Deshacer">Deshacer</button>
+  <button id="redo" aria-label="Rehacer">Rehacer</button>
+  <span class="grp">Corrección <input id="amt" type="range" min="0" max="100" value="100" aria-label="Cantidad de corrección"><button id="fix" disabled>Afinar todo</button></span>
+  <label class="grp"><input id="snap" type="checkbox" checked> Semitonos</label>
+  <span class="grp">Zoom <input id="zoom" type="range" min="40" max="400" value="120" aria-label="Zoom horizontal"></span>
+  <button id="reset" disabled>Restaurar</button>
+  <button id="save">Guardar proyecto</button>
+  <label class="btn">Abrir proyecto<input id="open" type="file" accept=".json" hidden></label>
+  <button id="export" disabled>Exportar WAV</button>
+</header>
+<div id="stage">
+  <div id="keysWrap"><canvas id="keys" width="56"></canvas></div>
+  <div id="scroll"><canvas id="board"></canvas><div id="empty">Abre un audio, graba tu voz o prueba el ejemplo.<br>Arrastra una nota para cambiar su tono o su posición.<br>Arrastra el fondo para moverte. Doble toque en una nota para afinarla.</div></div>
+</div>
+<div id="info" role="status"></div>
+<script src="js/core/state.js"></script>
+<script src="js/core/history.js"></script>
+<script src="js/audio/pitch.js"></script>
+<script src="js/ui/board.js"></script>
+<script src="js/ui/edit.js"></script>
+<script src="js/audio/engine.js"></script>
+<script src="js/io/input.js"></script>
+<script src="js/io/project.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
